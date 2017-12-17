@@ -1,11 +1,11 @@
 body {
-  background: url(http://www.imgbase.info/images/safe-wallpapers/anime/anime_scenery/37453_anime_scenery_anime_clouds.jpg) no-repeat center center fixed;
+  background: url("../images/cloudy.jpg") no-repeat center center fixed;
 }
 
 .container {
   margin-top: 100px;
   text-align: center;
-  border: 1px solid lightblue;
+  border: 1px solid #2AD4CE;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   color: #CCCCCC;
