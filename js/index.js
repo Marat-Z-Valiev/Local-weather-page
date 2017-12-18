@@ -1,18 +1,15 @@
 var api = "https://fcc-weather-api.glitch.me/api/current?";
 
 $(document).ready(function() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var lon = position.coords.longitude;
-      var lat = position.coords.latitude;
-      getWeather(lat, lon);
-    })
-  }
-  //https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139
+  //Get latitude and longitude based on ip address
+  $.getJSON('https://geoip.nekudo.com/api/en/', function(json) {
+    var lat = json.location.latitude;
+    var lon = json.location.longitude;
+    var url = api + "lat=" + lat + "&lon=" + lon;
 
-  function getWeather(lat, lon) {
-    $.getJSON(api + "lat=" + lat + "&lon=" + lon, function(get) {
-      var city = get.name,
+    //Get location and weather conditions using latitude and longitude
+    $.getJSON(url, function(get) {
+        var city = get.name,
         country = get.sys.country,
         tempC = get.main.temp.toFixed(0),
         weather = get.weather[0].main,
@@ -34,7 +31,7 @@ $(document).ready(function() {
       })
 
       //Change background image depending on weather
-      var cloudyImage = "../images/cloudy.jpg",
+      var cloudyImage = "../images/clouds.jpg",
         clearImage = "../images/clear.jpg",
         snowImage = "../images/snow.jpg",
         rainImage = "../images/rain1.png",
@@ -43,7 +40,7 @@ $(document).ready(function() {
 
       if (weather == "Clear") {
         $("body").css("background", "url(" + clearImage + ")");
-      } else if (weather == "Cloudy") {
+      } else if (weather == "Clouds") {
         $("body").css("background", "url(" + cloudyImage + ")");
       } else if (weather == "Snow") {
         $("body").css("background", "url(" + snowImage + ")");
@@ -55,5 +52,5 @@ $(document).ready(function() {
         $("body").css("background", "url(" + fogImage + ")");
       }
     })
-  }
+  });
 })
