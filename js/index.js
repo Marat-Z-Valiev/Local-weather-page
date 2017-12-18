@@ -31,12 +31,12 @@ $(document).ready(function() {
       })
 
       //Change background image depending on weather
-      var cloudyImage = "../images/clouds.jpg",
-        clearImage = "../images/clear.jpg",
-        snowImage = "../images/snow.jpg",
-        rainImage = "../images/rain1.png",
-        nightClearImage = "../images/night_clear.jpg",
-        fogImage = "../images/fog.jpg0";
+      var cloudyImage = "images/clouds.jpg",
+        clearImage = "images/clear.jpg",
+        snowImage = "images/snow.jpg",
+        rainImage = "images/rain1.png",
+        nightClearImage = "images/night_clear.jpg",
+        fogImage = "images/fog.jpg0";
 
       if (weather == "Clear") {
         $("body").css("background", "url(" + clearImage + ")");
