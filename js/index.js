@@ -36,7 +36,8 @@ $(document).ready(function() {
         snowImage = "images/snow.jpg",
         rainImage = "images/rain1.png",
         nightClearImage = "images/night_clear.jpg",
-        fogImage = "images/fog.jpg0";
+        fogImage = "images/fog.jpg",
+        mistImage = "images/mist.jpg";
 
       if (weather == "Clear") {
         $("body").css("background", "url(" + clearImage + ")");
@@ -50,6 +51,8 @@ $(document).ready(function() {
         $("body").css("background", "url(" + nightClearImage + ")");
       } else if (weather == "Fog") {
         $("body").css("background", "url(" + fogImage + ")");
+      } else if (weather == "Mist") {
+        $("body").css("background", "url(" + mistImage + ")");
       }
     })
   });
