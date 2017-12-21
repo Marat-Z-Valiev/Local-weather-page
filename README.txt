@@ -1,1 +1,1 @@
-Random Quote Machine project is based on third-party API which allows the user to select a randomly generated quote and share it on Twitter.
+Local Weather Page displays current weather using geolocation and FreeCodeCamp API. It includes background image change based on weather conditions and also allows the user to swich from °C to F.
