@@ -1,3 +1,1 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/MaratV/pen/zdQLrZ.
-
- 
+Random Quote Machine project is based on third-party API which allows the user to select a randomly generated quote and share it on Twitter.
