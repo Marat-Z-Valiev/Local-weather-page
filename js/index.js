@@ -1,7 +1,7 @@
 const api = "https://fcc-weather-api.glitch.me/api/current?";
 
 $(document).ready(function() {
-  //Get latitude and longitude based on ip address
+  //Get latitude and longitude using ip address
   $.getJSON('https://geoip.nekudo.com/api/en/', function(json) {
     let lat = json.location.latitude;
     let lon = json.location.longitude;
@@ -14,18 +14,18 @@ $(document).ready(function() {
         tempC = get.main.temp.toFixed(0),
         weather = get.weather[0].main,
         icon = get.weather[0].icon;
-      $("#location").html(city + ", " + country);
-      $("#weather").html(weather + "</br>" + '<img src="' + icon + '" alt="Weather icon"/>');
+      $("#location").html(`${city}, ${country}`);
+      $("#weather").html(`${weather}</br><img src="${icon}" alt="Weather icon"/>`);
 
       //Toggle button to display temperature in selected unit
       let tempF = Math.round(parseInt(tempC) * 9 / 5 + 32);
-      $("#temperature").text(tempC + " C°");
+      $("#temperature").text(`${tempC} C°`);
       $(function() {
         $('#unit-converter').change(function() {
           if ($(this).prop('checked')) {
-            $('#temperature').html(tempF + " F");
+            $('#temperature').html(`${tempF} F`);
           } else {
-            $('#temperature').html(tempC + " °C");
+            $('#temperature').html(`${tempC} °C`);
           }
         })
       })
