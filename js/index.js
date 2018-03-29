@@ -3,13 +3,13 @@ const api = "https://fcc-weather-api.glitch.me/api/current?";
 $(document).ready(function() {
   //Get latitude and longitude using ip address
   $.getJSON('https://geoip.nekudo.com/api/en/', function(json) {
-    let lat = json.location.latitude;
-    let lon = json.location.longitude;
-    let url = api + "lat=" + lat + "&lon=" + lon;
+    const lat = json.location.latitude;
+    const lon = json.location.longitude;
+    const url = `${api}lat=${lat}&lon=${lon}`;
 
     //Get location and weather conditions using latitude and longitude
     $.getJSON(url, function(get) {
-        let city = get.name,
+        const city = get.name,
         country = get.sys.country,
         tempC = get.main.temp.toFixed(0),
         weather = get.weather[0].main,
@@ -18,7 +18,7 @@ $(document).ready(function() {
       $("#weather").html(`${weather}</br><img src="${icon}" alt="Weather icon"/>`);
 
       //Toggle button to display temperature in selected unit
-      let tempF = Math.round(parseInt(tempC) * 9 / 5 + 32);
+      const tempF = Math.round(parseInt(tempC) * 9 / 5 + 32);
       $("#temperature").text(`${tempC} C°`);
       $(function() {
         $('#unit-converter').change(function() {
@@ -31,7 +31,7 @@ $(document).ready(function() {
       })
 
       //Change background image depending on weather
-      let cloudyImage = "images/clouds.jpg",
+      const cloudyImage = "images/clouds.jpg",
         clearImage = "images/clear.jpg",
         snowImage = "images/snow.jpg",
         rainImage = "images/rain1.png",
