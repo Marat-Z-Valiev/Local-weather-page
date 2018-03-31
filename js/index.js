@@ -34,7 +34,7 @@ $(function() {
       const cloudyImage = 'images/clouds.jpg';
       const clearImage = 'images/clear.jpg';
       const snowImage = 'images/snow.jpg';
-      const rainImage = 'images/rain1.png';
+      let rainImage = 'images/rain.jpg';
       const nightClearImage = 'images/night_clear.jpg';
       const fogImage = 'images/fog.jpg';
       const mistImage = 'images/mist.jpg';
