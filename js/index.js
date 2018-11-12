@@ -1,6 +1,6 @@
 const api = 'https://fcc-weather-api.glitch.me/api/current?';
-const apiAccessPoint = '9639ca5bedffb6c88c74cc43a840fa0a';
-const getLocationURL = `http://api.ipapi.com/api/check?access_key=${apiAccessPoint}`;
+const apiAccessPoint = '42b547ca9197457db5f8efe9163b851f';
+const getLocationURL = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiAccessPoint}&fields=latitude,longitude`;
 
 //Get latitude and longitude using ip address
 async function getWeather() {
@@ -9,7 +9,6 @@ async function getWeather() {
     const latitude = getLocation.data.latitude;
     const longitude = getLocation.data.longitude;
     const url = `${api}lat=${latitude}&lon=${longitude}`;
-    
 
     await axios.get(url)
       .then((get) => {
